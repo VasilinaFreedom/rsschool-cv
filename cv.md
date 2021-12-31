@@ -13,3 +13,17 @@ I always strive to develop and acquire new knowledge. The field of front-end ver
 * I took a **course front-end development of RSSchool.**
 ## **Work
 I work at *Belarusian State Medical University* as an assistant at the department of biological chemistry.
+## Hard skills
+* HTML
+* CSS
+* JavaScript
+* Version control: Git
+* Figma(for web development)
+* Editors: Sublime, VSCode
+* English language
+## Soft skills
+* Open-mindedness and willingness to learn
+* Friendliness and teamwork
+* Critical thinking
+* Diligence
+* *I'm multiple personality: I sing in choir, go to gym and like read books.*
