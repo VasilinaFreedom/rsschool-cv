@@ -256,3 +256,20 @@ body {
     margin: -50px 0px 20px 60px;
     border: 2px solid rgba(34, 31, 31, 0.897);
   }
+  .contacts > h2 {
+    margin: 20px 0px 10px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: rgb(71, 71, 71)
+  }
+  .contacts-list {
+    display: flex;
+    justify-content:space-around;
+    margin: 30px 30px 30px 30px;
+    padding: 0px;
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: #5b5a5b;
+  }
