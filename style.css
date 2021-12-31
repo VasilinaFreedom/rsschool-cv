@@ -273,3 +273,30 @@ body {
     font-size: 35px;
     color: #5b5a5b;
   }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffe4e16f;
+    
+  }
+  .footer-github,
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-github > a {
+    font-size: 50px;
+    text-decoration: none;
+    color: #5b5a5b;
+  }
+  .footer-year > p {
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #5b5a5b;
+  }
+  @media (max-width: 768px) {
+    .section {
+      width: 100%;
+    }
+  }
