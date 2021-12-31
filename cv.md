@@ -5,3 +5,11 @@
 * **Phone:** +375 33 380-05-11
 * **Email:** vasilinamkrvch@gmail.com
 * **GitHub:** VasilinaFreedom
+## About Me
+I’m 25 years old.
+I always strive to develop and acquire new knowledge. The field of front-end very attract me. I learn diligently to achieve my goal and become a great developer!
+## **Education
+* I graduated from *Belarusian State University*.
+* I took a **course front-end development of RSSchool.**
+## **Work
+I work at *Belarusian State Medical University* as an assistant at the department of biological chemistry.
