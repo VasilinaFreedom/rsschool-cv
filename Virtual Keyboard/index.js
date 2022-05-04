@@ -29,4 +29,11 @@ function addNumAndLett(){
 }
 
 addNumAndLett();
+const key = document.querySelectorAll('.key')
 
+document.onkeypress = function(event){
+    // console.log(event.code);
+    // console.log(event.keyCode);
+    key.forEach(item=>item.classList.remove('active'))
+    document.querySelector('.key[data="'+event.keyCode+'"]').classList.add('active') //когда срабатывает событие и мы получаем код клавиши, подставляем этот код в дата-атрибут и добавляем класс к клавише
+}
