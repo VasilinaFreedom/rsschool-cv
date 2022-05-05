@@ -1,5 +1,5 @@
 body {
-  background-color: aqua;
+  background-color: black;
 }
 
 body .wrapper {
@@ -30,19 +30,25 @@ body .wrapper {
           justify-content: center;
 }
 
-.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .ctrl, .fn, .win, .alt, .space {
-  border: 1px solid black;
+.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .Ctrl, .Fn, .win, .Alt, .space {
+  border: 1px solid #df9a31;
+  -webkit-box-shadow: 4px 4px 4px #df9a31;
+          box-shadow: 4px 4px 4px #df9a31;
   margin: 3px;
   padding: 3px;
 }
 
-div .key {
+div .key, div .Ctrl, div .Fn, div .win, div .Alt {
   width: 60px;
   height: 60px;
+  color: #df9a31;
+  font-size: 20px;
 }
 
 div .quote {
   width: 45px;
+  color: #df9a31;
+  font-size: 20px;
 }
 
 div .back {
@@ -57,6 +63,7 @@ div .back {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
   font-size: 20px;
 }
 
@@ -71,6 +78,7 @@ div .tab {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
   font-size: 20px;
 }
 
@@ -85,6 +93,7 @@ div .slash {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
   font-size: 20px;
 }
 
@@ -99,6 +108,7 @@ div .caps {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
   font-size: 20px;
 }
 
@@ -113,6 +123,7 @@ div .enter {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
   font-size: 20px;
 }
 
@@ -127,6 +138,8 @@ div .shiftLeft {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
+  font-size: 20px;
 }
 
 div .shiftRight {
@@ -140,10 +153,13 @@ div .shiftRight {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #df9a31;
+  font-size: 20px;
 }
 
 div .space {
   width: 398px;
+  color: transparent;
 }
 
 div .last {
@@ -204,6 +220,9 @@ div .arrow .key.right {
 }
 
 .active {
-  background-color: aliceblue;
+  background-color: #2b2a27;
+  -webkit-box-shadow: 5px 5px 5px #e31010;
+          box-shadow: 5px 5px 5px #e31010;
+  border: 0px;
 }
 /*# sourceMappingURL=index.css.map */

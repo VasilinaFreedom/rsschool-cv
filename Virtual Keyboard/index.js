@@ -25,42 +25,10 @@ function addNumAndLett(){
 }
 
 addNumAndLett();
-const key = document.querySelectorAll('.key')
 
 
-document.onkeypress = function(event){
-    // console.log(event.code);
-    // console.log(event.keyCode);
-    key.forEach(item=>item.classList.remove('active'))
-    document.querySelector('.key[data="'+event.keyCode+'"]').classList.add('active') //когда срабатывает событие и мы получаем код клавиши, подставляем этот код в дата-атрибут и добавляем класс к клавише
-
-}
-
-
-key.forEach(function(item){
-    item.onclick = clickMouse})
-
-function clickMouse(){
-    key.forEach(item=>item.classList.remove('active'))
-    this.classList.add('active')
-}
-
-
-// let others = []
-// document.onkeypress = function(event){
-//     console.log(event)
-//     others.push(event.code)
-//     console.log(others) //просмотр кодов клавиш (коды цифр и текста в массив )
-// }
-// document.addEventListener('keydown', function(event) {
-//     if (event.code == 'Backspace') {
-//       alert('Отменить!')
-//     }
-//   });
-
-let others = [0, ]
 //добавляем кнопку бэкспэйс
-function back(){
+function backKey(){
     let plus = document.querySelector('div[data="61"]') //перед клавишей +
     let back =document.createElement('div')
     back.className = "back";
@@ -68,9 +36,9 @@ function back(){
     back='backspace'; 
     document.querySelector('.back').innerHTML = back;
 }
-back()
+backKey()
 
-function quote(){
+function quoteKey(){
     let one = document.querySelector('div[data="49"]') //перед клавишей 1
     let quote =document.createElement('div')
     quote.className = "quote";
@@ -78,9 +46,9 @@ function quote(){
     quote=String.fromCharCode(96) 
     document.querySelector('.quote').innerHTML = quote;
 }
-quote()
+quoteKey()
 
-function tab(){
+function tabKey(){
     let q = document.querySelector('div[data="113"]') 
     let tab =document.createElement('div')
     tab.className = "tab";
@@ -88,9 +56,9 @@ function tab(){
     tab='Tab'
     document.querySelector('.tab').innerHTML = tab;
 }
-tab()
+tabKey()
 
-function slash(){
+function slashKey(){
     let a = document.querySelector('div[data="97"]') 
     let slash =document.createElement('div')
     slash.className = "slash";
@@ -98,9 +66,9 @@ function slash(){
     slash=String.fromCharCode(92); 
     document.querySelector('.slash').innerHTML = slash;
 }
-slash()
+slashKey()
 
-function caps(){
+function capsKey(){
     let slash = document.querySelector('.slash') 
     let caps =document.createElement('div')
     caps.className = "caps";
@@ -108,9 +76,9 @@ function caps(){
     caps='Caps'; 
     document.querySelector('.caps').innerHTML = caps;
 }
-caps()
+capsKey()
 
-function enter(){
+function enterKey(){
     let x = document.querySelector('div[data="39"]') 
     let enter =document.createElement('div')
     enter.className = "enter";
@@ -118,9 +86,9 @@ function enter(){
     enter="Enter";
     document.querySelector('.enter').innerHTML = enter;
 }
-enter()
+enterKey()
 
-function shiftLeft(){
+function shiftLeftKey(){
     let enter =document.querySelector('.enter') 
     let shiftLeft =document.createElement('div')
     shiftLeft.className = "shiftLeft";
@@ -128,9 +96,9 @@ function shiftLeft(){
     shiftLeft="Shift";
     document.querySelector('.shiftLeft').innerHTML = shiftLeft;
 }
-shiftLeft()
+shiftLeftKey()
 
-function shiftRight(){
+function shiftRightKey(){
     let sl = document.querySelector('div[data="47"]') 
     let shiftRight =document.createElement('div')
     shiftRight.className = "shiftRight";
@@ -138,16 +106,10 @@ function shiftRight(){
     shiftRight="Shift";
     document.querySelector('.shiftRight').innerHTML = shiftRight;
 }
-shiftRight()
+shiftRightKey()
 
 
 
-// document.onkeypress = function(event){
-//     console.log(event)
-//     console.log(event.code)
-//     last.push(event.code)
-//     console.log(last) //просмотр кодов клавиш (коды цифр и текста в массив )
-// }
 
 //добавление последней строки клавиатуры
 
@@ -164,8 +126,9 @@ function addLastStr(){
     
     let key=''; //создаем пустую клавишу
     for(let i=0; i<lastKey.length; i++){ //сгружаем туда наши клавиши с массива
-        key+='<div class="key '+lastKey[i]+'">'+lastKey[i]+'</div>'; //делаем конкатенацию (пишем в новый див нашу клавишу, передавая опред. код)
+        key+='<div class="'+lastKey[i]+'">'+lastKey[i]+'</div>'; //делаем конкатенацию (пишем в новый див нашу клавишу, передавая опред. код)
     }
+
     document.querySelector('.last').innerHTML = key; //находим в доке наш новый класс
 }
 addLastStr()
@@ -184,3 +147,138 @@ function addArrow(){
     document.querySelector('.arrow').innerHTML = key; 
 }
 addArrow()
+
+//активация остальных клавиш
+const quote = document.querySelector('.quote')
+const back = document.querySelector('.back')
+const tab = document.querySelector('.tab')
+const slash = document.querySelector('.slash')
+const caps = document.querySelector('.caps')
+const enter = document.querySelector('.enter')
+const shiftLeft = document.querySelector('.shiftLeft')
+const shiftRight = document.querySelector('.shiftRight')
+const ctrl = document.querySelectorAll('.Ctrl')
+const fn = document.querySelector('.Fn')
+const win = document.querySelector('.win')
+const alt = document.querySelector('.Alt')
+const space = document.querySelector('.space')
+const altRight = document.querySelector('.altRight')
+const ctrlRight = document.querySelector('.ctrlRight')
+const left = document.querySelector('.left')
+const up = document.querySelector('.up')
+const down = document.querySelector('.down')
+const right = document.querySelector('.right')
+
+// function activeKey(){
+//     if(event.keyCode === 13){
+//         enter.classList.add('active')
+// }
+// }
+// enter.addEventListener('keyup', activeKey)
+const key = document.querySelectorAll('.key')
+
+
+document.onkeypress = function(event){
+    // console.log(event.code);
+    // console.log(event.keyCode);
+    key.forEach(item=>item.classList.remove('active'))
+    key.forEach(item=>{
+    if(item.classList.contains("key")==true){
+    document.querySelector('.key[data="'+event.keyCode+'"]').classList.add('active') //когда срабатывает событие и мы получаем код клавиши, подставляем этот код в дата-атрибут и добавляем класс к клавише
+    }
+    
+})}
+
+
+
+key.forEach(function(item){
+    item.onclick = clickMouse})
+
+function clickMouse(){
+    key.forEach(item=>item.classList.remove('active'))
+    this.classList.add('active')
+}
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 13){ enter.classList.add('active')}
+    else{enter.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 192){ quote.classList.add('active')}
+    else{quote.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 8){ back.classList.add('active')}
+    else{back.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 9){ tab.classList.add('active')}
+    else{tab.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 220){ slash.classList.add('active')}
+    else{slash.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 20){ caps.classList.add('active')}
+    else{caps.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.code === "ShiftLeft"){ shiftLeft.classList.add('active')}
+    else{shiftLeft.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.code === "ShiftRight"){ shiftRight.classList.add('active')}
+    else{shiftRight.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+// document.addEventListener('keydown', function(event) {
+//     if(event.code === "ControlLeft"){ shiftLeft.classList.add('active')}
+//     else{shiftLeft.classList.remove('active')}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.code === "ShiftLeft"){ shiftLeft.classList.add('active')}
+    else{shiftLeft.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+    
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 91){ win.classList.add('active')}
+    else{win.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.code === "Space"){ space.classList.add('active')}
+    else{space.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+    document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 37){ left.classList.add('active')}
+    else{left.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 38){ up.classList.add('active')}
+    else{up.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 39){ right.classList.add('active')}
+    else{right.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode === 40){ down.classList.add('active')}
+    else{down.classList.remove('active')
+    key.forEach(item=>item.classList.remove('active'))}})
+
+    document.addEventListener('keydown', function(event) {
+        console.log(event)
+    })

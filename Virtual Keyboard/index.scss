@@ -1,5 +1,5 @@
 body{
-    background-color: aqua;
+    background-color: black;
     .wrapper{
         display: flex;
         justify-content: center;
@@ -14,19 +14,24 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .ctrl, .fn, .win, .alt, .space{
-    border: 1px solid black;
+.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .Ctrl, .Fn, .win, .Alt, .space{
+    border: 1px solid rgb(223, 154, 49);
+    box-shadow: 4px 4px 4px rgb(223, 154, 49);
     margin: 3px;
     padding: 3px;
 }
 
 div{
-    .key{
+    .key, .Ctrl, .Fn, .win, .Alt{
         width: 60px;
         height: 60px;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
     }
     .quote{
         width: 45px;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
     }
     .back{
         width: 116px;
@@ -34,6 +39,7 @@ div{
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        color: rgb(223, 154, 49);
         font-size: 20px;
     }
     .tab{
@@ -41,6 +47,7 @@ div{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        color: rgb(223, 154, 49);
         font-size: 20px;
     }
     .slash{
@@ -48,6 +55,7 @@ div{
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        color: rgb(223, 154, 49);
         font-size: 20px;
     }
     .caps{
@@ -55,6 +63,7 @@ div{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        color: rgb(223, 154, 49);
         font-size: 20px;
     }
     .enter{
@@ -62,6 +71,7 @@ div{
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        color: rgb(223, 154, 49);
         font-size: 20px;
     }
     .shiftLeft{
@@ -69,15 +79,20 @@ div{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
     }
     .shiftRight{
         width: 155px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
     }
     .space{
         width: 398px;
+        color: transparent;
     }
     .last{
         display: flex;
@@ -113,7 +128,9 @@ div{
 }
 
 .active{
-    background-color: aliceblue;
+    background-color: #2b2a27;
+    box-shadow: 5px 5px 5px #e31010;
+    border: 0px;
 }
 
 
