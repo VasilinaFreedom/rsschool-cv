@@ -2,8 +2,20 @@ body {
   background-color: aqua;
 }
 
-.keyboard, .last {
-  width: 950px;
+body .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.keyboard {
+  width: 1100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,17 +37,17 @@ body {
 }
 
 div .key {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 div .quote {
-  width: 35px;
+  width: 45px;
 }
 
 div .back {
-  width: 106px;
-  height: 50px;
+  width: 116px;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +61,7 @@ div .back {
 }
 
 div .tab {
-  width: 70px;
+  width: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +75,7 @@ div .tab {
 }
 
 div .slash {
-  width: 70px;
+  width: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,7 +89,7 @@ div .slash {
 }
 
 div .caps {
-  width: 85px;
+  width: 105px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +103,7 @@ div .caps {
 }
 
 div .enter {
-  width: 120px;
+  width: 130px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +117,7 @@ div .enter {
 }
 
 div .shiftLeft {
-  width: 135px;
+  width: 155px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,7 +130,7 @@ div .shiftLeft {
 }
 
 div .shiftRight {
-  width: 135px;
+  width: 155px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,7 +143,64 @@ div .shiftRight {
 }
 
 div .space {
-  width: 300px;
+  width: 398px;
+}
+
+div .last {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div .arrow {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'left up up' 'left down right';
+}
+
+div .arrow .key.left {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: left;
+}
+
+div .arrow .key.up {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: up;
+  height: 23px;
+}
+
+div .arrow .key.down {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: down;
+  height: 23px;
+}
+
+div .arrow .key.right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: right;
+  margin-top: -34px;
+}
+
+.lastString {
+  width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .active {

@@ -1,9 +1,14 @@
 body{
     background-color: aqua;
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
 }
 
-.keyboard, .last{
-    width: 950px;
+.keyboard{
+    width: 1100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -17,64 +22,94 @@ body{
 
 div{
     .key{
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
     .quote{
-        width: 35px;
+        width: 45px;
     }
     .back{
-        width: 106px;
-        height: 50px;
+        width: 116px;
+        height: 60px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         font-size: 20px;
     }
     .tab{
-        width: 70px;
+        width: 80px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         font-size: 20px;
     }
     .slash{
-        width: 70px;
+        width: 80px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         font-size: 20px;
     }
     .caps{
-        width: 85px;
+        width: 105px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         font-size: 20px;
     }
     .enter{
-        width: 120px;
+        width: 130px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         font-size: 20px;
     }
     .shiftLeft{
-        width: 135px;
+        width: 155px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
     .shiftRight{
-        width: 135px;
+        width: 155px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
     }
     .space{
-        width: 300px;
+        width: 398px;
+    }
+    .last{
+        display: flex;
+    }
+    .arrow{
+        display: grid;
+        grid-template-areas: 'left up up'
+                        'left down right';
+        .key.left{
+            grid-area: left;
+        }
+        .key.up{
+            grid-area: up;
+            height: 23px;
+        }
+        .key.down{
+            grid-area: down;
+            height: 23px;
+        }
+        .key.right{
+            grid-area: right;
+            margin-top: -34px;
+        }
     }
 
+}
+.lastString{
+    width: 1100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .active{
