@@ -89,7 +89,47 @@ function slash(){
     let slash =document.createElement('div')
     slash.className = "slash";
     a.before(slash);
-    slash=String.fromCharCode(92) 
+    slash=String.fromCharCode(92); 
     document.querySelector('.slash').innerHTML = slash;
 }
 slash()
+
+function caps(){
+    let slash = document.querySelector('.slash') 
+    let caps =document.createElement('div')
+    caps.className = "caps";
+    slash.after(caps);
+    caps='Caps'; 
+    document.querySelector('.caps').innerHTML = caps;
+}
+caps()
+
+function enter(){
+    let x = document.querySelector('div[data="39"]') 
+    let enter =document.createElement('div')
+    enter.className = "enter";
+    x.after(enter);
+    enter="Enter";
+    document.querySelector('.enter').innerHTML = enter;
+}
+enter()
+
+function shiftLeft(){
+    let enter =document.querySelector('.enter') 
+    let shiftLeft =document.createElement('div')
+    shiftLeft.className = "shiftLeft";
+    enter.after(shiftLeft);
+    shiftLeft="Shift";
+    document.querySelector('.shiftLeft').innerHTML = shiftLeft;
+}
+shiftLeft()
+
+function shiftRight(){
+    let sl = document.querySelector('div[data="47"]') 
+    let shiftRight =document.createElement('div')
+    shiftRight.className = "shiftRight";
+    sl.after(shiftRight);
+    shiftRight="Shift";
+    document.querySelector('.shiftRight').innerHTML = shiftRight;
+}
+shiftRight()
