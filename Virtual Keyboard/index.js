@@ -13,6 +13,10 @@ let div = document.createElement('div');
 div.className = "keyboard";
 document.body.append(div);
 
+// let divBack = div.cloneNode(false)
+// div.className = "backspace";
+
+
 let keyboard=[49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 45, 61, 113, 119, 101, 114, 116, 121, 117, 105, 111, 112, 91, 93, 97, 115, 100, 102, 103, 104, 106, 107, 108, 59, 39, 122, 120, 99, 118, 98, 110, 109, 44, 46, 47]
 // document.onkeypress = function(event){
 //     // console.log(event)
@@ -33,7 +37,7 @@ const key = document.querySelectorAll('.key')
 
 
 document.onkeypress = function(event){
-    // console.log(event.code);
+    console.log(event.code);
     // console.log(event.keyCode);
     key.forEach(item=>item.classList.remove('active'))
     document.querySelector('.key[data="'+event.keyCode+'"]').classList.add('active') //когда срабатывает событие и мы получаем код клавиши, подставляем этот код в дата-атрибут и добавляем класс к клавише
@@ -61,3 +65,31 @@ function clickMouse(){
     key.forEach(item=>item.classList.remove('active'))
     this.classList.add('active')
 }
+
+// document.onkeydown=function(event){
+    
+// }
+
+// let others = []
+// document.onkeypress = function(event){
+//     console.log(event)
+//     others.push(event.code)
+//     console.log(others) //просмотр кодов клавиш (коды цифр и текста в массив )
+// }
+// document.addEventListener('keydown', function(event) {
+//     if (event.code == 'Backspace') {
+//       alert('Отменить!')
+//     }
+//   });
+
+let others = [0, ]
+//добавляем кнопку бэкспэйс
+function back(){
+let plus = document.querySelector('div[data="61"]') //перед клавишей +
+let back =document.createElement('div')
+back.className = "back";
+plus.after(back);
+back='backspace'; 
+document.querySelector('.back').innerHTML = back;
+}
+back()
