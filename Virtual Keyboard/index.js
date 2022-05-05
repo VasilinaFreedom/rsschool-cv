@@ -133,3 +133,24 @@ function shiftRight(){
     document.querySelector('.shiftRight').innerHTML = shiftRight;
 }
 shiftRight()
+
+let lastKey = ['Ctrl', 'Fn', 'win', 'Alt', 'space', 'Alt', 'Ctrl', 'left', 'up', 'down', 'right']
+let last =document.createElement('div')
+last.className = "last";
+div.append(last)
+
+// document.onkeypress = function(event){
+//     console.log(event)
+//     console.log(event.code)
+//     last.push(event.code)
+//     console.log(last) //просмотр кодов клавиш (коды цифр и текста в массив )
+// }
+function lastStr(){
+    
+    let key=''; //создаем пустую клавишу
+    for(let i=0; i<lastKey.length; i++){ //сгружаем туда наши клавиши с массива
+        key+='<div class="key '+lastKey[i]+'">'+lastKey[i]+'</div>'; //делаем конкатенацию (пишем в новый див нашу клавишу, передавая опред. код)
+    }
+    document.querySelector('.last').innerHTML = key; //находим в доке наш новый класс
+}
+lastStr()

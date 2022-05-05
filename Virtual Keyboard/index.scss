@@ -2,7 +2,7 @@ body{
     background-color: aqua;
 }
 
-.keyboard{
+.keyboard, .last{
     width: 950px;
     display: flex;
     flex-direction: row;
@@ -70,6 +70,9 @@ div{
         display: flex;
         justify-content: flex-end;
         align-items: center;
+    }
+    .space{
+        width: 300px;
     }
 
 }
