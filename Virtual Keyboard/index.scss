@@ -9,7 +9,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-.key, .back, .quote{
+.key, .back, .quote, .tab, .slash{
     border: 1px solid black;
     margin: 3px;
     padding: 3px;
@@ -24,8 +24,22 @@ div{
         width: 35px;
     }
     .back{
-        width: 114px;
+        width: 106px;
         height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 20px;
+    }
+    .tab{
+        width: 70px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 20px;
+    }
+    .slash{
+        width: 70px;
         display: flex;
         justify-content: flex-end;
         align-items: center;

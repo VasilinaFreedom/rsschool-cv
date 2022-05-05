@@ -65,7 +65,7 @@ function back(){
 back()
 
 function quote(){
-    let one = document.querySelector('div[data="49"]') //перед клавишей +
+    let one = document.querySelector('div[data="49"]') //перед клавишей 1
     let quote =document.createElement('div')
     quote.className = "quote";
     one.before(quote);
@@ -73,3 +73,23 @@ function quote(){
     document.querySelector('.quote').innerHTML = quote;
 }
 quote()
+
+function tab(){
+    let q = document.querySelector('div[data="113"]') 
+    let tab =document.createElement('div')
+    tab.className = "tab";
+    q.before(tab);
+    tab='Tab'
+    document.querySelector('.tab').innerHTML = tab;
+}
+tab()
+
+function slash(){
+    let a = document.querySelector('div[data="97"]') 
+    let slash =document.createElement('div')
+    slash.className = "slash";
+    a.before(slash);
+    slash=String.fromCharCode(92) 
+    document.querySelector('.slash').innerHTML = slash;
+}
+slash()
