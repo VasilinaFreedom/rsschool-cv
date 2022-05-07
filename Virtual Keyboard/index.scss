@@ -3,18 +3,20 @@ body{
     .wrapper{
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
     }
 }
 
 .keyboard{
     width: 1100px;
+    padding-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .Ctrl, .Fn, .win, .Alt, .space{
+.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .CtrlLeft, .CtrlRight,.Fn, .win, .AltLeft, .AltRight, .space, .left,.up, .down, .right{
     border: 1px solid rgb(223, 154, 49);
     box-shadow: 4px 4px 4px rgb(223, 154, 49);
     margin: 3px;
@@ -22,11 +24,14 @@ body{
 }
 
 div{
-    .key, .Ctrl, .Fn, .win, .Alt{
+    .key, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight{
         width: 60px;
         height: 60px;
         color: rgb(223, 154, 49);
         font-size: 20px;
+    }
+    .CtrlLeft, .CtrlRight, .AltLeft, .AltRight{
+        // color: transparent;
     }
     .quote{
         width: 45px;
@@ -101,20 +106,47 @@ div{
         display: grid;
         grid-template-areas: 'left up up'
                         'left down right';
-        .key.left{
+        .left{
             grid-area: left;
+            width: 60px;
+            height: 60px;
+            color: transparent;
+            background-image: url(images/arrow-left.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
         }
-        .key.up{
+        .up{
             grid-area: up;
             height: 23px;
+            width: 60px;
+            color: transparent;
+            background-image: url(images/arrow-up.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
         }
-        .key.down{
+        .down{
             grid-area: down;
             height: 23px;
+            width: 60px;
+            color: transparent;
+            background-image: url(images/arrow-down.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
+        
         }
-        .key.right{
+        .right{
             grid-area: right;
             margin-top: -34px;
+            width: 60px;
+            height: 60px;
+            color: transparent;
+            background-image: url(images/arrow-right.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
         }
     }
 
@@ -129,8 +161,16 @@ div{
 
 .active{
     background-color: #2b2a27;
-    box-shadow: 5px 5px 5px #e31010;
+    box-shadow: 4px 4px 4px #e31010;
     border: 0px;
+    transition: 0.4s;
+}
+textarea{
+    background-color: #2b2a27;
+    border: 1px solid rgb(223, 154, 49);
+    box-shadow: 4px 4px 4px rgb(223, 154, 49);
+    color: rgb(223, 154, 49);
+
 }
 
 
