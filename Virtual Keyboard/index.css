@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: black;
 }
@@ -35,7 +36,7 @@ body .wrapper {
           justify-content: center;
 }
 
-.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight, .space, .left, .up, .down, .right {
+.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight, .Space, .left, .up, .down, .right {
   border: 1px solid #df9a31;
   -webkit-box-shadow: 4px 4px 4px #df9a31;
           box-shadow: 4px 4px 4px #df9a31;
@@ -50,7 +51,19 @@ div .key, div .CtrlLeft, div .CtrlRight, div .Fn, div .win, div .AltLeft, div .A
   font-size: 20px;
 }
 
-div .quote {
+div .CtrlLeft, div .CtrlRight, div .AltLeft, div .AltRight, div .Fn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div .quote, div .ё {
   width: 45px;
   color: #df9a31;
   font-size: 20px;
@@ -92,14 +105,16 @@ div .slash {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   color: #df9a31;
   font-size: 20px;
+}
+
+div .MetaLeft {
+  color: transparent;
+  background-image: url(images/win.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
 }
 
 div .caps {
@@ -162,7 +177,7 @@ div .shiftRight {
   font-size: 20px;
 }
 
-div .space {
+div .Space {
   width: 398px;
   color: transparent;
 }
@@ -232,22 +247,6 @@ div .arrow .right {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
-}
-
-.lastString {
-  width: 1100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .active {
