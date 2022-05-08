@@ -8,8 +8,18 @@ let div = document.createElement('div');
 div.className = "keyboard";
 wrapp.append(div);
 
-//клавиши букв и цифр
+//поле ввода
+const text = document.createElement('textarea');
+text.rows = 16;
+text.cols = 145;
+text.placeholder = 'Press Shift+Alt to change the language...';
+text.autofocus='autofocus';
+text.value=''
+text.className = "text";
+wrapp.append(text);
 
+
+//клавиши букв и цифр
 
 let keyboard = [
     '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
@@ -30,15 +40,15 @@ function addKeyboard(){
     let key=''; //создаем пустую клавишу
     for(let i=0; i<keyboard.length; i++){ //сгружаем туда наши клавиши с массива
     if(keyboard[i]=='backspace'){
-        key+='<div class="key back" data="Backspace">'+keyboard[i]+'</div>'; 
+        key+='<div class="key back" data="Backspace">'+keyboard[i]+'</div>'; //задаем им класс и дата-атрибут
     }
-    else if(keyboard[i]=='`'){
-        key+='<div class="key quote" data="'+keyboard[i]+'">'+keyboard[i]+'</div>'; 
+    else if(keyboard[i]=='`' || keyboard[i]=='ё' || keyboard[i]=='Ё'){
+        key+='<div class="key quote" data="'+keyboard[i]+'">'+keyboard[i]+'</div>'; //специфические клавиши
     }
     else if(keyboard[i]=='Tab'){
         key+='<div class="key tab" data="'+keyboard[i]+'">'+keyboard[i]+'</div>'; 
     }
-    else if(keyboard[i]=='\\'){
+    else if(keyboard[i]=='\\' || (keyboard[i]=='/' && keyboard[0]!='`') || keyboard[i]=='|'){
         key+='<div class="key slash" data="Backslash">'+keyboard[i]+'</div>'; 
     }
     else if(keyboard[i]=='Caps'){
@@ -74,40 +84,13 @@ function addKeyboard(){
 
 addKeyboard();
 
-//смена раскладки
-document.addEventListener('keydown', function(event) {
-    if(event.altKey && event.shiftKey && keyboard[0]=='`'){ 
-        keyboard = [
-           'ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
-           'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\',
-           'Caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter',
-           'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'Shift',
-           'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
-           
-            addKeyboard()
-            addArrow()
-}   
-    else if(event.altKey && event.shiftKey && keyboard[0]=='ё'){ 
-    keyboard = [
-            '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
-            'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
-            'Caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter',
-            'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'Shift',
-            'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
-            
-        addKeyboard()
-        addArrow()
-}    
-})
-
-
-
 function addArrow(){
     //добавляем стрелки
     let arrowKey=['left', 'up', 'down', 'right']
     let arrow =document.createElement('div')
     arrow.className = "arrow";
     div.append(arrow)
+
     let key=''; 
     for(let i=0; i<arrowKey.length; i++){ 
         key+='<div class='+arrowKey[i]+'>'+arrowKey[i]+'</div>'; 
@@ -118,11 +101,19 @@ addArrow()
 
 const key = document.querySelectorAll('.key')
 
+document.addEventListener('keyup', function(event){
+    key.forEach(item=>item.classList.remove('active'))})
+
 //активность стрелок
 const left = document.querySelector('.left')
 const up = document.querySelector('.up')
 const down = document.querySelector('.down')
 const right = document.querySelector('.right')
+
+const arrow = [left, right, up, down]
+
+document.addEventListener('keyup', function(event){
+    arrow.forEach(item=>item.classList.remove('active'))})
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode === 37){ left.classList.add('active')}
@@ -151,6 +142,7 @@ document.addEventListener('keydown', function(event) {
         console.log(event.code)
         console.log(event.keyCode)
         console.log(event.key)
+        
     
     // key.forEach(item=>item.classList.remove('active'))
     key.forEach(item=>{
@@ -166,16 +158,151 @@ document.addEventListener('keydown', function(event) {
     //     }
 })})
 
-//поле ввода
-const text = document.createElement('textarea');
-text.rows = 16;
-text.cols = 145;
-text.placeholder = 'Press Shift+Alt to change the language...';
-text.autofocus='autofocus';
-text.value=''
-text.className = "text";
-wrapp.append(text);
-// placeholder="Your request..." value="" autocomplete="off" autofocus="autofocus"
+
+//смена раскладки
+
+//виды клавиатуры
+//английский
+let keyboardEng = [
+    '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+    'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
+    'Caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter',
+    'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+let keyboardEngCaps = [
+    '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+    'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\',
+    'Caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'Enter',
+    'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+let keyboardEngShift = [
+    '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+    'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
+    'Caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter',
+    'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+let keyboardEngCapsShift = [
+    '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'backspace',
+    'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '|',
+    'Caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'Enter',
+    'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+//русская
+
+let keyboardRus = [
+    'ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+    'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\',
+    'Caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter',
+    'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+let keyboardRusCaps = [
+    'Ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+    'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '\\',
+    'Caps', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter',
+    'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+let keyboardRusShift = [
+    'ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'backspace',
+    'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '/',
+    'Caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter',
+    'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+let keyboardRusCapsShift = [
+    'Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'backspace',
+    'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '/',
+    'Caps', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter',
+    'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', 'Shift',
+    'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+
+
+
+document.addEventListener('keydown', function(event) {
+    if((event.altKey && event.shiftKey && keyboard[0]=='`') || ((event.key=='CapsLock' && keyboard[0]=='Ё'))){ 
+        keyboard=keyboardRus
+            addKeyboard()
+            addArrow()
+}   
+    else if(event.key=='CapsLock'  && keyboard[0]=='ё'){ 
+    keyboard=keyboardRusCaps
+        addKeyboard()
+        addArrow()
+}    
+else if((event.key=='Shift'  && keyboard[0]=='ё')){ 
+    keyboard=keyboardRusShift
+        addKeyboard()
+        addArrow()
+}
+    else if((event.key=='Shift'  && keyboard[0]=='Ё')){ 
+    keyboard=keyboardRusCapsShift
+        addKeyboard()
+        addArrow()
+}
+
+    else if(event.altKey && event.shiftKey && keyboard[0]=='ё'){ 
+    keyboard = [
+            '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+            'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
+            'Caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter',
+            'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'Shift',
+            'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+            
+        addKeyboard()
+        addArrow()
+}    
+    else if(event.key=='CapsLock'  && keyboard[0]=='`'){ 
+    keyboardEngCaps = [
+        '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+        'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\',
+        'Caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'Enter',
+        'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'Shift',
+        'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+        keyboard=keyboardEngCaps
+        addKeyboard()
+        addArrow()
+}    
+    else if(event.key=='CapsLock'  && keyboard[0]=='ё'){ 
+    keyboard = [
+        'Ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
+        'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '\\',
+        'Caps', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter',
+        'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', 'Shift',
+        'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+         
+        addKeyboard()
+        addArrow()
+}    
+ 
+else if(event.key=='Shift'  && keyboard==keyboardEngCaps){ 
+    keyboardShiftEnCaps = [
+        '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'backspace',
+        'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '|',
+        'Caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'Enter',
+        'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 'Shift',
+        'Ctrl', 'Fn', 'MetaLeft', 'Alt', 'Space', 'Alt', 'Ctrl'];
+        keyboard=keyboardShiftEnCaps
+        addKeyboard()
+        addArrow()
+}    
+})
+
+
+
+document.addEventListener('keyup', function(event){
+    if(keyboard==keyboardShiftEnCaps){
+        keyboard=keyboardEngCaps
+        addKeyboard()
+        addArrow()
+        console.log('up!')
+    }
+})
+
 
 
 //набор текста при клике мыши
@@ -187,8 +314,11 @@ function clickMouse(){
     this.classList.add('active')
     
     key.forEach(item=>{
-        if(item.classList.contains("active")==true){
-    text.value+=item.getAttribute('data')
+        if(item.classList.contains("active")==true && item.getAttribute('data')=='Space' ){
+        text.value+=' '}
+        else if(item.classList.contains("active")==true && item.getAttribute('data')=='Backspace' ){
+        text.value+=text.value.slice([text.value.length], -1)}
+        else if(item.classList.contains("active")==true){text.value+=item.getAttribute('data')
 }})}
 
 
