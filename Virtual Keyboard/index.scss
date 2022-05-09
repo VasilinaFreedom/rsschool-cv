@@ -1,0 +1,171 @@
+body{
+    background-color: black;
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}
+
+.keyboard{
+    width: 1050px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.key, .Backspace, .Backquote, .Tab, .Backslash, .CapsLock, .Enter, .ShiftLeft, .ShiftRight, .CtrlLeft, .CtrlRight,.Fn, .win, .AltLeft, .AltRight, .Space, .left,.up, .down, .right{
+    border: 1px solid rgb(223, 154, 49);
+    box-shadow: 4px 4px 4px rgb(223, 154, 49);
+    margin: 3px;
+    padding: 3px;
+}
+
+div{
+    .key, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight{
+        width: 55px;
+        height: 55px;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .Backquote{
+        width: 45px;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .Backspace{
+        width: 125px;
+        height: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .Tab{
+        width: 84px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .Backslash{
+        width: 84px;
+        display: flex;
+        // justify-content: flex-end;
+        // align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .MetaLeft{
+        color: transparent;
+        background-image: url(images/win.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+    }
+    .CapsLock{
+        width: 107px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .Enter{
+        width: 130px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .ShiftLeft{
+        width: 115px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .ShiftRight{
+        width: 125px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: rgb(223, 154, 49);
+        font-size: 20px;
+    }
+    .Space{
+        width: 460px;
+        color: transparent;
+    }
+            .ArrowLeft{
+            color: transparent;
+            background-image: url(images/arrow-left.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
+        }
+        .ArrowUp{
+            color: transparent;
+            background-image: url(images/arrow-up.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
+        }
+        .ArrowDown{
+            color: transparent;
+            background-image: url(images/arrow-down.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 25px;
+        
+        }
+        .ArrowRight{
+            color: transparent;
+            background-image: url(images/arrow-right.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
+        }
+
+.active{
+    background-color: #2b2a27;
+    box-shadow: 4px 4px 4px #e31010;
+    border: 0px;
+    transition: 0.4s;
+}
+}
+textarea{
+    background-color: #2b2a27;
+    border: 1px solid rgb(223, 154, 49);
+    box-shadow: 4px 4px 4px rgb(223, 154, 49);
+    color: rgb(223, 154, 49);
+    
+}
+
+div{
+	display: inline-block;
+}
+
+.hidden{
+	display: none;
+}
+.clearfix{
+	clear: both;
+}
+
+
+.Delete{
+	display: none;
+}
+
+
+
+
+        
+                 
