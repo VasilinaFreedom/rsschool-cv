@@ -1,3 +1,5 @@
+alert('ОС: Windows')
+
 const body = document.querySelector('body');
 //оболочка для клавы
 const wrapp = document.createElement('div');
