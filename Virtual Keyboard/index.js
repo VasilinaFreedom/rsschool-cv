@@ -11,8 +11,8 @@ wrapp.append(div);
 
 //поле ввода
 const text = document.createElement('textarea');
-text.rows = 16;
-text.cols = 145;
+text.rows = 8;
+text.cols = 138;
 text.placeholder = 'Press Ctrl+Alt to change the language...';
 text.autofocus='autofocus';
 text.value=''
