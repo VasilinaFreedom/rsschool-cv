@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   background-color: black;
 }
@@ -20,7 +19,7 @@ body .wrapper {
 }
 
 .keyboard {
-  width: 1100px;
+  width: 1050px;
   padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,7 +35,7 @@ body .wrapper {
           justify-content: center;
 }
 
-.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight, .Space, .left, .up, .down, .right {
+.key, .Backspace, .Backquote, .Tab, .Backslash, .CapsLock, .Enter, .ShiftLeft, .ShiftRight, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight, .Space, .left, .up, .down, .right {
   border: 1px solid #df9a31;
   -webkit-box-shadow: 4px 4px 4px #df9a31;
           box-shadow: 4px 4px 4px #df9a31;
@@ -45,32 +44,20 @@ body .wrapper {
 }
 
 div .key, div .CtrlLeft, div .CtrlRight, div .Fn, div .win, div .AltLeft, div .AltRight {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   color: #df9a31;
   font-size: 20px;
 }
 
-div .CtrlLeft, div .CtrlRight, div .AltLeft, div .AltRight, div .Fn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-div .quote, div .ё {
+div .Backquote {
   width: 45px;
   color: #df9a31;
   font-size: 20px;
 }
 
-div .back {
-  width: 116px;
+div .Backspace {
+  width: 125px;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,8 +72,8 @@ div .back {
   font-size: 20px;
 }
 
-div .tab {
-  width: 80px;
+div .Tab {
+  width: 84px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,8 +87,8 @@ div .tab {
   font-size: 20px;
 }
 
-div .slash {
-  width: 80px;
+div .Backslash {
+  width: 84px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,8 +104,8 @@ div .MetaLeft {
   background-size: 25px;
 }
 
-div .caps {
-  width: 105px;
+div .CapsLock {
+  width: 107px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,7 +119,7 @@ div .caps {
   font-size: 20px;
 }
 
-div .enter {
+div .Enter {
   width: 130px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -147,8 +134,8 @@ div .enter {
   font-size: 20px;
 }
 
-div .shiftLeft {
-  width: 155px;
+div .ShiftLeft {
+  width: 115px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,8 +149,8 @@ div .shiftLeft {
   font-size: 20px;
 }
 
-div .shiftRight {
-  width: 155px;
+div .ShiftRight {
+  width: 125px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,29 +165,11 @@ div .shiftRight {
 }
 
 div .Space {
-  width: 398px;
+  width: 460px;
   color: transparent;
 }
 
-div .last {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-div .arrow {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: 'left up up' 'left down right';
-}
-
-div .arrow .left {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  grid-area: left;
-  width: 60px;
-  height: 60px;
+div .ArrowLeft {
   color: transparent;
   background-image: url(images/arrow-left.jpg);
   background-position: center;
@@ -208,13 +177,7 @@ div .arrow .left {
   background-size: 20px;
 }
 
-div .arrow .up {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: up;
-  height: 23px;
-  width: 60px;
+div .ArrowUp {
   color: transparent;
   background-image: url(images/arrow-up.png);
   background-position: center;
@@ -222,26 +185,15 @@ div .arrow .up {
   background-size: 20px;
 }
 
-div .arrow .down {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: down;
-  height: 23px;
-  width: 60px;
+div .ArrowDown {
   color: transparent;
   background-image: url(images/arrow-down.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 20px;
+  background-size: 25px;
 }
 
-div .arrow .right {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: right;
-  margin-top: -34px;
-  width: 60px;
-  height: 60px;
+div .ArrowRight {
   color: transparent;
   background-image: url(images/arrow-right.png);
   background-position: center;
@@ -249,7 +201,7 @@ div .arrow .right {
   background-size: 20px;
 }
 
-.active {
+div .active {
   background-color: #2b2a27;
   -webkit-box-shadow: 4px 4px 4px #e31010;
           box-shadow: 4px 4px 4px #e31010;
@@ -264,5 +216,43 @@ textarea {
   -webkit-box-shadow: 4px 4px 4px #df9a31;
           box-shadow: 4px 4px 4px #df9a31;
   color: #df9a31;
+}
+
+div {
+  display: inline-block;
+}
+
+/* .keyboard{
+    display: block;
+	width: 830px;
+    margin: 50px auto 0;
+    padding: 5px;
+    padding-left: 0;
+    padding-bottom: 0;
+    background: #04444b;
+    border: 3px solid #81cfd8;
+    border-radius: 5px;
+    height: 277px;
+} */
+/* .textarea{
+	display: block;
+	width: 830px;
+	margin: 30px auto 0PX;
+}
+textarea{
+	font-size: 18px;
+	width: 100%;
+	resize: none;
+} */
+.hidden {
+  display: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.Delete {
+  display: none;
 }
 /*# sourceMappingURL=index.css.map */

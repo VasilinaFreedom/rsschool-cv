@@ -9,14 +9,14 @@ body{
 }
 
 .keyboard{
-    width: 1100px;
+    width: 1050px;
     padding-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-.key, .back, .quote, .tab, .slash, .caps, .enter, .shiftLeft, .shiftRight, .CtrlLeft, .CtrlRight,.Fn, .win, .AltLeft, .AltRight, .Space, .left,.up, .down, .right{
+.key, .Backspace, .Backquote, .Tab, .Backslash, .CapsLock, .Enter, .ShiftLeft, .ShiftRight, .CtrlLeft, .CtrlRight,.Fn, .win, .AltLeft, .AltRight, .Space, .left,.up, .down, .right{
     border: 1px solid rgb(223, 154, 49);
     box-shadow: 4px 4px 4px rgb(223, 154, 49);
     margin: 3px;
@@ -25,23 +25,18 @@ body{
 
 div{
     .key, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight{
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .CtrlLeft, .CtrlRight, .AltLeft, .AltRight, .Fn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .quote, .ё{
+    .Backquote{
         width: 45px;
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .back{
-        width: 116px;
+    .Backspace{
+        width: 125px;
         height: 60px;
         display: flex;
         justify-content: flex-end;
@@ -49,16 +44,16 @@ div{
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .tab{
-        width: 80px;
+    .Tab{
+        width: 84px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .slash{
-        width: 80px;
+    .Backslash{
+        width: 84px;
         display: flex;
         // justify-content: flex-end;
         // align-items: center;
@@ -72,15 +67,15 @@ div{
         background-repeat: no-repeat;
         background-size: 25px;
     }
-    .caps{
-        width: 105px;
+    .CapsLock{
+        width: 107px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .enter{
+    .Enter{
         width: 130px;
         display: flex;
         justify-content: flex-end;
@@ -88,16 +83,16 @@ div{
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .shiftLeft{
-        width: 155px;
+    .ShiftLeft{
+        width: 115px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         color: rgb(223, 154, 49);
         font-size: 20px;
     }
-    .shiftRight{
-        width: 155px;
+    .ShiftRight{
+        width: 125px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -105,67 +100,45 @@ div{
         font-size: 20px;
     }
     .Space{
-        width: 398px;
+        width: 460px;
         color: transparent;
     }
-    .last{
-        display: flex;
-    }
-    .arrow{
-        display: grid;
-        grid-template-areas: 'left up up'
-                        'left down right';
-        .left{
-            grid-area: left;
-            width: 60px;
-            height: 60px;
+            .ArrowLeft{
             color: transparent;
             background-image: url(images/arrow-left.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: 20px;
         }
-        .up{
-            grid-area: up;
-            height: 23px;
-            width: 60px;
+        .ArrowUp{
             color: transparent;
             background-image: url(images/arrow-up.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: 20px;
         }
-        .down{
-            grid-area: down;
-            height: 23px;
-            width: 60px;
+        .ArrowDown{
             color: transparent;
             background-image: url(images/arrow-down.jpg);
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 20px;
+            background-size: 25px;
         
         }
-        .right{
-            grid-area: right;
-            margin-top: -34px;
-            width: 60px;
-            height: 60px;
+        .ArrowRight{
             color: transparent;
             background-image: url(images/arrow-right.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: 20px;
         }
-    }
-
-}
 
 .active{
     background-color: #2b2a27;
     box-shadow: 4px 4px 4px #e31010;
     border: 0px;
     transition: 0.4s;
+}
 }
 textarea{
     background-color: #2b2a27;
@@ -174,6 +147,51 @@ textarea{
     color: rgb(223, 154, 49);
 
 }
+
+// html{
+// 	font-family: 'Roboto', sans-serif;
+// 	font-size: 18px;
+// 	color: #04444b;
+// }
+div{
+	display: inline-block;
+}
+
+/* .keyboard{
+    display: block;
+	width: 830px;
+    margin: 50px auto 0;
+    padding: 5px;
+    padding-left: 0;
+    padding-bottom: 0;
+    background: #04444b;
+    border: 3px solid #81cfd8;
+    border-radius: 5px;
+    height: 277px;
+} */
+/* .textarea{
+	display: block;
+	width: 830px;
+	margin: 30px auto 0PX;
+}
+textarea{
+	font-size: 18px;
+	width: 100%;
+	resize: none;
+} */
+
+.hidden{
+	display: none;
+}
+.clearfix{
+	clear: both;
+}
+
+
+.Delete{
+	display: none;
+}
+
 
 
 
