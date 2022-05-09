@@ -307,3 +307,81 @@ function delAnimationBtn() {
 }
 delAnimationBtn();
 
+// работа CapsLock
+function controlCapsLock() {
+  document.addEventListener('keydown', (event) => {
+    if (event.code == 'CapsLock' && CapsLock) {
+    	if (langMarker) {
+    		btnEngCapsLock.forEach((item) => item.classList.remove('hidden'));
+    		btnEng.forEach((item) => item.classList.add('hidden'));
+    		btnEngDownCapsLock.forEach((item) => item.classList.add('hidden'));
+    	} else {
+    		btnRusCapsLock.forEach((item) => item.classList.remove('hidden'));
+    		btnRus.forEach((item) => item.classList.add('hidden'));
+    		btnRusDownCapsLock.forEach((item) => item.classList.add('hidden'));
+    	}
+      CapsLock= false;
+    } else if (event.code == 'CapsLock' && !CapsLock) {
+      if (langMarker) {
+    		btnEngCapsLock.forEach((item) => item.classList.add('hidden'));
+    		btnEng.forEach((item) => item.classList.add('hidden'));
+    		btnEngDownCapsLock.forEach((item) => item.classList.remove('hidden'));
+    	} else {
+    		btnRusCapsLock.forEach((item) => item.classList.add('hidden'));
+    		btnRus.forEach((item) => item.classList.add('hidden'));
+    		btnRusDownCapsLock.forEach((item) => item.classList.remove('hidden'));
+    	}
+      CapsLock= true;
+    }
+  });
+}
+controlCapsLock();
+
+//заполнение при клике
+function ClickMouse() {
+  // eslint-disable-next-line func-names
+  document.querySelector('.keyboard').onclick = function (event) {
+    const A = eventKeyCode.indexOf(Number(event.target.getAttribute('data')));
+    addSimbol(A);
+    if (event.toElement.getAttribute('data') == 20 && CapsLock) {
+      if (langMarker) {
+        btnEngCapsLock.forEach((item) => item.classList.remove('hidden'));
+        btnEng.forEach((item) => item.classList.add('hidden'));
+        btnEngDownCapsLock.forEach((item) => item.classList.add('hidden'));
+      } else {
+        btnRusCapsLock.forEach((item) => item.classList.remove('hidden'));
+        btnRus.forEach((item) => item.classList.add('hidden'));
+        btnRusDownCapsLock.forEach((item) => item.classList.add('hidden'));
+      }
+      CapsLock= false;
+    } else if (event.toElement.getAttribute('data') == 20 && !CapsLock) {
+      if (langMarker) {
+        btnEngCapsLock.forEach((item) => item.classList.add('hidden'));
+        btnEng.forEach((item) => item.classList.add('hidden'));
+        btnEngDownCapsLock.forEach((item) => item.classList.remove('hidden'));
+      } else {
+        btnRusCapsLock.forEach((item) => item.classList.add('hidden'));
+        btnRus.forEach((item) => item.classList.add('hidden'));
+        btnRusDownCapsLock.forEach((item) => item.classList.remove('hidden'));
+      }
+      CapsLock= true;
+    }
+  };
+}
+ClickMouse();
+
+//анимация при клике и ее закрытие
+const keys=document.querySelectorAll('.key')
+keys.forEach(function(item){
+    item.onclick = animClick})
+
+function animClick(){
+    keys.forEach(item=>item.classList.remove('active'))
+    this.classList.add('active') 
+    setTimeout(TimeOut, 100);}
+
+function TimeOut(){
+  keys.forEach((item) => {
+    item.classList.remove('active');
+  });
+}
