@@ -1,0 +1,236 @@
+body {
+  background-color: black;
+}
+
+body .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.keyboard {
+  width: 1050px;
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.key, .Backspace, .Backquote, .Tab, .Backslash, .CapsLock, .Enter, .ShiftLeft, .ShiftRight, .CtrlLeft, .CtrlRight, .Fn, .win, .AltLeft, .AltRight, .Space, .left, .up, .down, .right {
+  border: 1px solid #df9a31;
+  -webkit-box-shadow: 4px 4px 4px #df9a31;
+          box-shadow: 4px 4px 4px #df9a31;
+  margin: 3px;
+  padding: 3px;
+}
+
+div .key, div .CtrlLeft, div .CtrlRight, div .Fn, div .win, div .AltLeft, div .AltRight {
+  width: 55px;
+  height: 55px;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .Backquote {
+  width: 45px;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .Backspace {
+  width: 125px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .Tab {
+  width: 84px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .Backslash {
+  width: 84px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .MetaLeft {
+  color: transparent;
+  background-image: url(images/win.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+}
+
+div .CapsLock {
+  width: 107px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .Enter {
+  width: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .ShiftLeft {
+  width: 115px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .ShiftRight {
+  width: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #df9a31;
+  font-size: 20px;
+}
+
+div .Space {
+  width: 460px;
+  color: transparent;
+}
+
+div .ArrowLeft {
+  color: transparent;
+  background-image: url(images/arrow-left.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+div .ArrowUp {
+  color: transparent;
+  background-image: url(images/arrow-up.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+div .ArrowDown {
+  color: transparent;
+  background-image: url(images/arrow-down.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+}
+
+div .ArrowRight {
+  color: transparent;
+  background-image: url(images/arrow-right.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+div .active {
+  background-color: #2b2a27;
+  -webkit-box-shadow: 4px 4px 4px #e31010;
+          box-shadow: 4px 4px 4px #e31010;
+  border: 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+textarea {
+  background-color: #2b2a27;
+  border: 1px solid #df9a31;
+  -webkit-box-shadow: 4px 4px 4px #df9a31;
+          box-shadow: 4px 4px 4px #df9a31;
+  color: #df9a31;
+}
+
+div {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.Delete {
+  display: none;
+}
+/*# sourceMappingURL=index.css.map */
