@@ -204,3 +204,106 @@ let flag = false;
 let CapsLock= false;
 let Shift = false;
 
+//особые случаи ввода
+function addSimbol(N) {
+  switch (N) {
+    case 13:
+      text.value = text.value.substr(0, text.value.length - 1);
+      break;
+    case 29: case 42: case 54: case 55: case 56: case 57: case 59: case 63:
+      break;
+    case 58:
+      text.value += ' ';
+      break;
+    case 41:
+      text.value += '\n';
+      break;
+    case 14:
+      text.value += '   ';
+      break;
+    default:
+      if (langMarker) {
+        if (Shift && !CapsLock) {
+          text.value += keyboardEngShift[N];
+        } else if (!Shift && !CapsLock) {
+          text.value += keyboardEng[N];
+        } if (!Shift && CapsLock) {
+          text.value += keyboardEngCapsLock[N];
+        } if (Shift && CapsLock) {
+          text.value += keyboardEng[N];
+        }
+      } else {
+        if (Shift && !CapsLock) {
+          text.value += keyboardRusShift[N];
+        } else if (!Shift && !CapsLock) {
+          text.value += keyboardRus[N];
+        } if (!Shift && CapsLock) {
+          text.value += keyboardRusCapsLock[N];
+        } if (Shift && CapsLock) {
+          text.value += keyboardRus[N];
+        }
+      }
+  }
+}
+
+//анимация и шифт
+function addAnimationBtn() {
+  // eslint-disable-next-line func-names
+  document.onkeydown = function (event) {
+    event.preventDefault();
+    document.querySelector(`.keyboard > .${event.code}`).classList.add('active');
+    const B = eventCode.indexOf(event.code);
+    addSimbol(B);
+
+    // изменение символов при нажатии шифт
+    if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
+      Shift = true;
+      if (langMarker && !CapsLock) {
+        btnEngCapsLock.forEach((item) => item.classList.add('hidden'));
+        btnEng.forEach((item) => item.classList.remove('hidden'));
+      } else if (langMarker && CapsLock) {
+        btnEngDownCapsLock.forEach((item) => item.classList.add('hidden'));
+        btnEng.forEach((item) => item.classList.add('hidden'));
+        btnEngCapsLock.forEach((item) => item.classList.remove('hidden'));
+      } else if (!langMarker && !CapsLock) {
+        btnRusCapsLock.forEach((item) => item.classList.add('hidden'));
+        btnRus.forEach((item) => item.classList.remove('hidden'));
+      } else if (!langMarker && CapsLock) {
+        btnRusDownCapsLock.forEach((item) => item.classList.add('hidden'));
+        btnRus.forEach((item) => item.classList.add('hidden'));
+        btnRusCapsLock.forEach((item) => item.classList.remove('hidden'));
+      }
+    }
+  };
+}
+addAnimationBtn();
+
+// убираем анимацию при отпускании клавиши
+function delAnimationBtn() {
+  // eslint-disable-next-line func-names
+  document.onkeyup = function (event) {
+    if (event.keyCode > 7) {
+      document.querySelector(`.keyboard > .${event.code}`).classList.remove('active');
+
+      // работа шифта
+      if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
+        Shift = false;
+        if (langMarker && !CapsLock) {
+          btnEngCapsLock.forEach((item) => item.classList.remove('hidden'));
+          btnEng.forEach((item) => item.classList.add('hidden'));
+        } else if (langMarker && CapsLock) {
+          btnEngDownCapsLock.forEach((item) => item.classList.remove('hidden'));
+          btnEngCapsLock.forEach((item) => item.classList.add('hidden'));
+        } else if (!langMarker && !CapsLock) {
+          btnRusCapsLock.forEach((item) => item.classList.remove('hidden'));
+          btnRus.forEach((item) => item.classList.add('hidden'));
+        } else if (!langMarker && CapsLock) {
+          btnRusDownCapsLock.forEach((item) => item.classList.remove('hidden'));
+          btnRusCapsLock.forEach((item) => item.classList.add('hidden'));
+        }
+      }
+    }
+  };
+}
+delAnimationBtn();
+
